@@ -61,6 +61,11 @@
     .cert-logo{height:44px;opacity:.45;filter:grayscale(100%);transition:opacity .3s,filter .3s;object-fit:contain}
     .cert-logo:hover{opacity:.9;filter:grayscale(0%)}
     .cert-logo-label{font-size:.68rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center;max-width:110px}
+    .gallery-note{font-size:.8rem;color:var(--muted);margin-bottom:1.6rem;max-width:620px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+    .gallery-figure{margin:0;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+    .gallery-figure img{width:100%;height:260px;object-fit:cover;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .35s,transform .35s}
+    .gallery-figure:hover img{filter:grayscale(0%);transform:scale(1.04)}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.6rem}
     .contact-item{padding:1.4rem;border:1px solid var(--border);background:var(--card)}
     .contact-label{font-size:.68rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.4rem}
@@ -80,6 +85,7 @@
     <a href="#deneyim" data-tr="Eğitimcilik" data-en="Teaching">Eğitimcilik</a>
     <a href="#teknoloji" data-tr="Teknoloji" data-en="Technology">Teknoloji</a>
     <a href="#yontem" data-tr="Yöntem" data-en="Method">Yöntem</a>
+    <a href="#ogrenciler" data-tr="Öğrenciler" data-en="Students">Öğrenciler</a>
     <a href="#egitim" data-tr="Akademik" data-en="Academic">Akademik</a>
     <a href="#bestecilik" data-tr="Bestecilik" data-en="Composition">Bestecilik</a>
     <a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
@@ -234,6 +240,19 @@
       <div><img src="assets/logo-lcm.svg" alt="London College of Music" class="cert-logo"><div class="cert-logo-label">London College of Music</div></div>
       <div><img src="assets/logo-royal.svg" alt="Royal College of Music" class="cert-logo"><div class="cert-logo-label">Royal College of Music</div></div>
     </div>
+  </div>
+</section>
+
+<section id="ogrenciler" class="reveal">
+  <div class="sec-label" data-tr="ÖĞRENCİLERİM" data-en="MY STUDENTS">ÖĞRENCİLERİM</div>
+  <h2 class="sec-title" data-tr="Öğrencilerimden Kareler" data-en="Moments With My Students">Öğrencilerimden Kareler</h2>
+  <p class="gallery-note" data-tr="Fotoğraflar, öğrenci ve veli izniyle paylaşılmıştır." data-en="Photos shared with student and parent consent.">Fotoğraflar, öğrenci ve veli izniyle paylaşılmıştır.</p>
+  <div class="gallery">
+    <figure class="gallery-figure"><img src="assets/students/ogrenci-1.jpg" alt="Öğrenci fotoğrafı" loading="lazy"></figure>
+    <figure class="gallery-figure"><img src="assets/students/ogrenci-2.jpg" alt="Öğrenci fotoğrafı" loading="lazy"></figure>
+    <figure class="gallery-figure"><img src="assets/students/ogrenci-3.jpg" alt="Öğrenci fotoğrafı" loading="lazy"></figure>
+    <figure class="gallery-figure"><img src="assets/students/ogrenci-4.jpg" alt="Öğrenci fotoğrafı" loading="lazy"></figure>
+    <figure class="gallery-figure"><img src="assets/students/ogrenci-5.jpg" alt="Öğrenci fotoğrafı" loading="lazy"></figure>
   </div>
 </section>
 
