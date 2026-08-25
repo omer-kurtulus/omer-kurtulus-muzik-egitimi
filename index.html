@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ömer Kurtuluş — Müzik Eğitimi</title>
+  <meta name="description" content="Ömer Kurtuluş — Müzik eğitimci. 13+ yıl müzik eğitimi deneyimi.">
+  <style>
+    :root{--bg:#0a0a0a;--fg:#f0f0f0;--muted:#888;--accent:#fff;--border:#2a2a2a;--card:#141414;--max-w:920px;--font:'Georgia','Times New Roman',serif;--mono:'SF Mono','Fira Code',monospace}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none;transition:opacity .2s}a:hover{opacity:.6}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:56px}
+    .nav-name{font-size:.85rem;font-family:var(--mono);letter-spacing:.08em;color:var(--muted)}
+    .nav-links{display:flex;gap:1.4rem;align-items:center}
+    .nav-links a{font-size:.78rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+    .nav-links a:hover{color:var(--fg);opacity:1}
+    .lang-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:.7rem;padding:.3rem .7rem;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
+    .lang-btn:hover{border-color:var(--accent);color:var(--fg)}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;position:relative}
+    .hero-inner{display:flex;gap:4rem;align-items:center;max-width:var(--max-w);width:100%}
+    .hero-photo{width:260px;height:260px;border-radius:50%;object-fit:cover;filter:grayscale(100%) contrast(1.1);border:2px solid var(--border);flex-shrink:0}
+    .hero-text{flex:1}
+    .hero-name{font-size:2.8rem;font-weight:normal;letter-spacing:-.02em;line-height:1.1;margin-bottom:.4rem}
+    .hero-title{font-size:1rem;font-family:var(--mono);color:var(--muted);letter-spacing:.06em;margin-bottom:1.4rem}
+    .hero-desc{font-size:1.05rem;color:#bbb;max-width:480px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:var(--max-w);margin:0 auto 5rem}
+    .stat{background:var(--bg);padding:2.2rem 1.5rem;text-align:center}
+    .stat-num{font-size:2rem;font-weight:normal;color:var(--accent);font-family:var(--mono)}
+    .stat-label{font-size:.72rem;color:var(--muted);font-family:var(--mono);letter-spacing:.06em;margin-top:.4rem}
+    section{max-width:var(--max-w);margin:0 auto;padding:4.5rem 2rem}
+    .sec-label{font-size:.7rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.18em;margin-bottom:.6rem}
+    .sec-title{font-size:1.7rem;font-weight:normal;margin-bottom:2.2rem;letter-spacing:-.01em}
+    .timeline{border-left:1px solid var(--border);padding-left:2.2rem;position:relative}
+    .timeline-item{margin-bottom:2.8rem;position:relative}
+    .timeline-item::before{content:'';position:absolute;left:-2.65rem;top:.55rem;width:7px;height:7px;border-radius:50%;background:var(--muted);border:1px solid var(--bg)}
+    .tl-date{font-size:.72rem;font-family:var(--mono);color:var(--muted);letter-spacing:.06em;margin-bottom:.3rem}
+    .tl-role{font-size:1.05rem;margin-bottom:.2rem}
+    .tl-org{font-size:.85rem;color:var(--muted);font-family:var(--mono);margin-bottom:.6rem}
+    .tl-desc{font-size:.88rem;color:#aaa;line-height:1.65;max-width:580px}
+    .tl-desc ul{list-style:none;margin-top:.4rem;padding-left:0}
+    .tl-desc li{font-size:.84rem;color:#999;padding:.15rem 0;padding-left:1rem;position:relative;line-height:1.5}
+    .tl-desc li::before{content:'·';position:absolute;left:0;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+    .card{background:var(--card);border:1px solid var(--border);padding:1.6rem 1.4rem;transition:border-color .2s}
+    .card:hover{border-color:#555}
+    .card-title{font-size:.95rem;margin-bottom:.5rem}
+    .card-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+    .tag{font-size:.68rem;font-family:var(--mono);color:var(--muted);border:1px solid var(--border);padding:.3rem .8rem;letter-spacing:.05em}
+    .composer-note{font-size:.92rem;color:#999;max-width:620px;margin-bottom:2rem;line-height:1.7}
+    .works{list-style:none}
+    .works li{padding:.8rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline}
+    .works li:last-child{border-bottom:none}
+    .work-title{font-size:.95rem}
+    .work-meta{font-size:.72rem;font-family:var(--mono);color:var(--muted)}
+    .cert-section{margin-top:3rem;padding:2rem 1.6rem;border:1px solid var(--border);background:var(--card)}
+    .cert-title{font-size:1.05rem;margin-bottom:.6rem}
+    .cert-desc{font-size:.88rem;color:#aaa;line-height:1.65;max-width:640px}
+    .cert-logos{display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;margin-top:1.8rem}
+    .cert-logo{height:44px;opacity:.45;filter:grayscale(100%);transition:opacity .3s,filter .3s;object-fit:contain}
+    .cert-logo:hover{opacity:.9;filter:grayscale(0%)}
+    .cert-logo-label{font-size:.68rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center;max-width:110px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.6rem}
+    .contact-item{padding:1.4rem;border:1px solid var(--border);background:var(--card)}
+    .contact-label{font-size:.68rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.4rem}
+    .contact-value{font-size:1rem}
+    footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;font-size:.72rem;font-family:var(--mono);color:var(--muted);letter-spacing:.06em}
+    @media(max-width:768px){.hero-inner{flex-direction:column;text-align:center;gap:2.4rem}.hero-photo{width:180px;height:180px}.hero-name{font-size:2rem}.stats{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.nav-links{display:none}nav{padding:0 1.2rem}.hero{padding-top:5rem}}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .fade-in{animation:fadeIn .7s ease both}.fade-in-delay{animation:fadeIn .7s ease .15s both}.fade-in-delay2{animation:fadeIn .7s ease .3s both}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+<nav>
+  <span class="nav-name" data-tr="ÖMER KURTULUŞ" data-en="OMER KURTULUS">ÖMER KURTULUŞ</span>
+  <div class="nav-links">
+    <a href="#deneyim" data-tr="Eğitimcilik" data-en="Teaching">Eğitimcilik</a>
+    <a href="#teknoloji" data-tr="Teknoloji" data-en="Technology">Teknoloji</a>
+    <a href="#yontem" data-tr="Yöntem" data-en="Method">Yöntem</a>
+    <a href="#egitim" data-tr="Akademik" data-en="Academic">Akademik</a>
+    <a href="#bestecilik" data-tr="Bestecilik" data-en="Composition">Bestecilik</a>
+    <a href="#iletisim" data-tr="İletişim" data-en="Contact">İletişim</a>
+  </div>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="assets/profile.jpg" alt="Ömer Kurtuluş" class="hero-photo fade-in">
+    <div class="hero-text">
+      <h1 class="hero-name fade-in-delay" data-tr="Ömer Kurtuluş" data-en="Omer Kurtulus">Ömer Kurtuluş</h1>
+      <p class="hero-title fade-in-delay" data-tr="Müzik Eğitimci" data-en="Music Educator">Müzik Eğitimci</p>
+      <p class="hero-desc fade-in-delay2" data-tr="İstanbul doğumlu müzik eğitimci ve besteci. 13+ yıl müzik eğitimi deneyimi; konservatuvar, üniversite, çocuk akademisi ve online öğretim alanlarında. Müzik teorisi, armoni, kompozisyon, piyano, solfej ve çağdaş müzik teknolojisi alanlarında kapsamlı öğretim deneyimi." data-en="Istanbul-born music educator and composer. 13+ years of music teaching experience across conservatory, university, children's academy, and online instruction. Comprehensive teaching experience in music theory, harmony, composition, piano, solfège, and contemporary music technology.">İstanbul doğumlu müzik eğitimci ve besteci. 13+ yıl müzik eğitimi deneyimi; konservatuvar, üniversite, çocuk akademisi ve online öğretim alanlarında. Müzik teorisi, armoni, kompozisyon, piyano, solfej ve çağdaş müzik teknolojisi alanlarında kapsamlı öğretim deneyimi.</p>
+    </div>
+  </div>
+</div>
+
+<div class="stats reveal">
+  <div class="stat"><div class="stat-num">13+</div><div class="stat-label" data-tr="YIL EĞİTİM DENEYİMİ" data-en="YEARS TEACHING">YIL EĞİTİM DENEYİMİ</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label" data-tr="YIL ONLINE ÖĞRETİM" data-en="YEARS ONLINE">YIL ONLINE ÖĞRETİM</div></div>
+  <div class="stat"><div class="stat-num">220+</div><div class="stat-label" data-tr="ÇOCUK AKADEMİSİ ÖĞRENCİSİ" data-en="ACADEMY STUDENTS">ÇOCUK AKADEMİSİ ÖĞRENCİSİ</div></div>
+  <div class="stat"><div class="stat-num">6+</div><div class="stat-label" data-tr="YAŞ ARALIĞI" data-en="AGE RANGE">YAŞ ARALIĞI</div></div>
+</div>
+
+<section id="deneyim" class="reveal">
+  <div class="sec-label" data-tr="EĞİTİMCİLİK DENEYİMLERİM" data-en="TEACHING EXPERIENCE">EĞİTİMCİLİK DENEYİMLERİM</div>
+  <h2 class="sec-title" data-tr="Öğretim Geçmişi" data-en="Teaching History">Öğretim Geçmişi</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-date">2024 – 2026</div>
+      <div class="tl-role" data-tr="Lisansüstü Öğretim Görevlisi — Kompozisyon" data-en="Graduate Teaching Assistant — Composition">Lisansüstü Öğretim Görevlisi — Kompozisyon</div>
+      <div class="tl-org">Bowling Green State University</div>
+      <div class="tl-desc"><ul>
+        <li data-tr="Kompozisyon bölümü akademik faaliyetlerinin desteklenmesi" data-en="Supporting academic activities of the Composition Area">Kompozisyon bölümü akademik faaliyetlerinin desteklenmesi</li>
+        <li data-tr="Composer's Forum organizasyonu" data-en="Composer's Forum organisation">Composer's Forum organizasyonu</li>
+        <li data-tr="Bowling Green New Music Festival organizasyon ve prodüksiyon desteği" data-en="Bowling Green New Music Festival organisation and production support">Bowling Green New Music Festival organizasyon ve prodüksiyon desteği</li>
+        <li data-tr="Öğrenci ve profesyonel icracılarla prova koordinasyonu" data-en="Rehearsal coordination with student and professional performers">Öğrenci ve profesyonel icracılarla prova koordinasyonu</li>
+        <li data-tr="Besteci–icracı koordinasyonu" data-en="Composer–performer coordination">Besteci–icracı koordinasyonu</li>
+        <li data-tr="Konuk bestecilerin koordinasyonu" data-en="Guest composer coordination">Konuk bestecilerin koordinasyonu</li>
+        <li data-tr="Prova planlaması ve sahne yönetimi" data-en="Rehearsal scheduling and stage management">Prova planlaması ve sahne yönetimi</li>
+        <li data-tr="Fixed-media playback, live electronics, live-sound lojistiği" data-en="Fixed-media playback, live electronics, live-sound logistics">Fixed-media playback, live electronics, live-sound lojistiği</li>
+        <li data-tr="Konser teknik altyapısı ve tanıtım materyalleri" data-en="Concert technical infrastructure and promotional materials">Konser teknik altyapısı ve tanıtım materyalleri</li>
+      </ul></div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date" data-tr="Kasım 2016 – Temmuz 2019" data-en="Nov 2016 – Jul 2019">Kasım 2016 – Temmuz 2019</div>
+      <div class="tl-role" data-tr="Öğretim Görevlisi — Müzik Teorisi, Armoni, Solfej" data-en="Teaching Position — Music Theory, Harmony, Solfège">Öğretim Görevlisi — Müzik Teorisi, Armoni, Solfej</div>
+      <div class="tl-org">İstanbul Üniversitesi Devlet Konservatuvarı</div>
+      <div class="tl-desc">
+        <p data-tr="Konservatuvar lise kademesinde yaklaşık 400 öğrenciyle çalışıldı." data-en="Worked with approximately 400 students at the conservatory high-school level.">Konservatuvar lise kademesinde yaklaşık 400 öğrenciyle çalışıldı.</p>
+        <ul>
+          <li data-tr="Müzik teorisi" data-en="Music theory">Müzik teorisi</li>
+          <li data-tr="Armoni" data-en="Harmony">Armoni</li>
+          <li data-tr="Kompozisyon" data-en="Composition">Kompozisyon</li>
+          <li data-tr="Notasyon" data-en="Notation">Notasyon</li>
+          <li data-tr="Ritim" data-en="Rhythm">Ritim</li>
+          <li data-tr="Analiz" data-en="Analysis">Analiz</li>
+          <li data-tr="Kulak eğitimi / solfej" data-en="Ear training / solfège">Kulak eğitimi / solfej</li>
+          <li data-tr="Armonileme" data-en="Harmonisation">Armonileme</li>
+          <li data-tr="Konservatuvar hazırlık" data-en="Conservatory preparation">Konservatuvar hazırlık</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date" data-tr="Ağustos 2021 – Mart 2023" data-en="Aug 2021 – Mar 2023">Ağustos 2021 – Mart 2023</div>
+      <div class="tl-role" data-tr="Kurucu ve Sanat Yönetmeni — Ömer Kurtuluş Müzik Akademisi" data-en="Founder & Director — Ömer Kurtuluş Music Academy">Kurucu ve Sanat Yönetmeni — Ömer Kurtuluş Müzik Akademisi</div>
+      <div class="tl-org">Sağlık Bilimleri Üniversitesi Teknopol, İstanbul</div>
+      <div class="tl-desc">
+        <p data-tr="5–18 yaş grubuna yönelik üretim temelli müzik eğitimi müfredatı. Yaklaşık 400 kayıt, 220 öğrenci eğitim aldı." data-en="Production-based music education curriculum for ages 5–18. Approximately 400 registrations, 220 students trained.">5–18 yaş grubuna yönelik üretim temelli müzik eğitimi müfredatı. Yaklaşık 400 kayıt, 220 öğrenci eğitim aldı.</p>
+        <ul>
+          <li data-tr="18 farklı enstrümanlı beste atölyesi (~100 çocuk besteci)" data-en="18-instrument composition workshop (~100 young composers)">18 farklı enstrümanlı beste atölyesi (~100 çocuk besteci)</li>
+          <li data-tr="Otizm spektrumundaki çocuklarla rehabilitasyon odaklı proje" data-en="Rehabilitation-focused project with children on the autism spectrum">Otizm spektrumundaki çocuklarla rehabilitasyon odaklı proje</li>
+          <li data-tr="Dünya müzikleri atölyeleri" data-en="World-music workshops">Dünya müzikleri atölyeleri</li>
+          <li data-tr="Spektrogram Vokal Topluluğu" data-en="Spektrogram Vocal Ensemble">Spektrogram Vokal Topluluğu</li>
+          <li data-tr="Kompozisyon, piyano, teori, yaratıcı müzik üretimi, müzik temelleri" data-en="Composition, piano, theory, creative music production, music fundamentals">Kompozisyon, piyano, teori, yaratıcı müzik üretimi, müzik temelleri</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date" data-tr="2013 – Günümüz" data-en="2013 – Present">2013 – Günümüz</div>
+      <div class="tl-role" data-tr="Özel Müzik Eğitmeni" data-en="Private Music Educator">Özel Müzik Eğitmeni</div>
+      <div class="tl-org" data-tr="İstanbul / Online · 6+ yaş ve üzeri" data-en="Istanbul / Online · Ages 6+">İstanbul / Online · 6+ yaş ve üzeri</div>
+      <div class="tl-desc">
+        <p data-tr="13 yıl aktif özel öğretim, 8 yıl online öğretim. 6 yaş ve üzeri her yaş grubuna bireyselleştirilmiş müfredat." data-en="13 years of active private teaching, 8 years online. Individualised curricula for all age groups 6 and above.">13 yıl aktif özel öğretim, 8 yıl online öğretim. 6 yaş ve üzeri her yaş grubuna bireyselleştirilmiş müfredat.</p>
+        <ul>
+          <li data-tr="Piyano, kompozisyon, müzik teorisi, armoni, kontrapunkt" data-en="Piano, composition, music theory, harmony, counterpoint">Piyano, kompozisyon, müzik teorisi, armoni, kontrapunkt</li>
+          <li data-tr="Solfej, kulak eğitimi, ritim, notasyon, analiz, armonileme" data-en="Solfège, ear training, rhythm, notation, analysis, harmonisation">Solfej, kulak eğitimi, ritim, notasyon, analiz, armonileme</li>
+          <li data-tr="Konservatuvar ve müzik okulu hazırlık" data-en="Conservatory and music school preparation">Konservatuvar ve müzik okulu hazırlık</li>
+          <li data-tr="ABRSM · Trinity · LCM · Royal College sınav hazırlığı" data-en="ABRSM · Trinity · LCM · Royal College exam preparation">ABRSM · Trinity · LCM · Royal College sınav hazırlığı</li>
+          <li data-tr="Müzik teknolojisi ve elektroakustik kompozisyon" data-en="Music technology and electroacoustic composition">Müzik teknolojisi ve elektroakustik kompozisyon</li>
+          <li data-tr="Teori sınavları, performanslar ve yarışmalara hazırlık" data-en="Theory exams, performance, and competition preparation">Teori sınavları, performanslar ve yarışmalara hazırlık</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date" data-tr="Yaklaşık 4 yıl" data-en="Approx. 4 years">Yaklaşık 4 yıl</div>
+      <div class="tl-role" data-tr="Müzik Eğitmeni" data-en="Music Instructor">Müzik Eğitmeni</div>
+      <div class="tl-org">Nar Sanat, İstanbul</div>
+      <div class="tl-desc"><ul><li data-tr="Piyano, armoni ve genel müzik teorisi öğretimi" data-en="Piano, harmony, and general music theory instruction">Piyano, armoni ve genel müzik teorisi öğretimi</li></ul></div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date" data-tr="Yaklaşık 4 yıl" data-en="Approx. 4 years">Yaklaşık 4 yıl</div>
+      <div class="tl-role" data-tr="Müzik Eğitmeni" data-en="Music Instructor">Müzik Eğitmeni</div>
+      <div class="tl-org">Pera Sanat, İstanbul</div>
+      <div class="tl-desc"><ul><li data-tr="Piyano, armoni, müzik ve genel müzisyenlik öğretimi" data-en="Piano, harmony, music, and general musicianship instruction">Piyano, armoni, müzik ve genel müzisyenlik öğretimi</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="teknoloji" class="reveal">
+  <div class="sec-label" data-tr="MÜZİK TEKNOLOJİSİ EĞİTİMİ" data-en="MUSIC TECHNOLOGY TEACHING">MÜZİK TEKNOLOJİSİ EĞİTİMİ</div>
+  <h2 class="sec-title" data-tr="Teknoloji Dersleri" data-en="Technology Lessons">Teknoloji Dersleri</h2>
+  <p class="composer-note" data-tr="3 yıldır müzik teknolojisi dersleri veriyorum. Ableton Live, REAPER ve diğer dijital ses işleme araçlarıyla üretim, kayıt, miksaj ve elektroakustik kompozisyon eğitimi." data-en="I have been teaching music technology for 3 years. Production, recording, mixing, and electroacoustic composition education using Ableton Live, REAPER, and other digital audio processing tools.">3 yıldır müzik teknolojisi dersleri veriyorum. Ableton Live, REAPER ve diğer dijital ses işleme araçlarıyla üretim, kayıt, miksaj ve elektroakustik kompozisyon eğitimi.</p>
+  <div class="tags">
+    <span class="tag">Ableton Live</span><span class="tag">REAPER</span><span class="tag" data-tr="Kayıt ve Miksaj" data-en="Recording & Mixing">Kayıt ve Miksaj</span><span class="tag" data-tr="Ses Tasarımı" data-en="Sound Design">Ses Tasarımı</span><span class="tag" data-tr="Elektroakustik Kompozisyon" data-en="Electroacoustic Composition">Elektroakustik Kompozisyon</span><span class="tag" data-tr="Dijital Üretim" data-en="Digital Production">Dijital Üretim</span><span class="tag" data-tr="Max/MSP" data-en="Max/MSP">Max/MSP</span><span class="tag">SoMax 2</span><span class="tag">FluCoMa</span><span class="tag">IRCAM Modalys</span><span class="tag">CDP / SoundLoom</span><span class="tag" data-tr="Fixed Media" data-en="Fixed Media">Fixed Media</span><span class="tag" data-tr="Live Electronics" data-en="Live Electronics">Live Electronics</span>
+  </div>
+</section>
+
+<section id="yontem" class="reveal">
+  <div class="sec-label" data-tr="EĞİTİM YAKLAŞIMI" data-en="TEACHING APPROACH">EĞİTİM YAKLAŞIMI</div>
+  <h2 class="sec-title" data-tr="Öğretim Felsefesi" data-en="Teaching Philosophy">Öğretim Felsefesi</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title" data-tr="Üretim Temelli Öğrenme" data-en="Production-Based Learning">Üretim Temelli Öğrenme</div>
+      <div class="card-desc" data-tr="Öğrenciler enstrüman öğrenmenin yanı sıra müzik üretir, besteler ve kendi seslerini keşfeder. Bu yaklaşım 220+ çocuk öğrenciyle uygulanmıştır." data-en="Students not only learn an instrument; they create, compose, and discover their own voices. This approach has been implemented with 220+ child students.">Öğrenciler enstrüman öğrenmenin yanı sıra müzik üretir, besteler ve kendi seslerini keşfeder. Bu yaklaşım 220+ çocuk öğrenciyle uygulanmıştır.</div>
+    </div>
+    <div class="card">
+      <div class="card-title" data-tr="Bireysel Müfredat" data-en="Individualised Curriculum">Bireysel Müfredat</div>
+      <div class="card-desc" data-tr="Her öğrencinin hedefi, yaş grubu, seviyesi ve öğrenme hızı göz önünde bulundurularak kişiye özel müfredat tasarlanır. 6 yaş ve üzeri geniş deneyim." data-en="A personalised curriculum is designed considering each student's goals, age group, level, and learning pace. Extensive experience across ages 6 and above.">Her öğrencinin hedefi, yaş grubu, seviyesi ve öğrenme hızı göz önünde bulundurularak kişiye özel müfredat tasarlanır. 6 yaş ve üzeri geniş deneyim.</div>
+    </div>
+    <div class="card">
+      <div class="card-title" data-tr="Teori + Pratik Entegrasyonu" data-en="Theory + Practice Integration">Teori + Pratik Entegrasyonu</div>
+      <div class="card-desc" data-tr="Müzik teorisi, armoni ve analiz soyut bilgi olarak değil, icra ve besteleme pratiğiyle doğrudan bağlantılı şekilde öğretilir." data-en="Music theory, harmony, and analysis are taught not as abstract knowledge but in direct connection with performance and compositional practice.">Müzik teorisi, armoni ve analiz soyut bilgi olarak değil, icra ve besteleme pratiğiyle doğrudan bağlantılı şekilde öğretilir.</div>
+    </div>
+    <div class="card">
+      <div class="card-title" data-tr="Çağdaş Müzik Teknolojisi" data-en="Contemporary Music Technology">Çağdaş Müzik Teknolojisi</div>
+      <div class="card-desc" data-tr="Ableton Live, REAPER, Max/MSP ve elektroakustik araçlar eğitimde çağdaş bir boyut ekler. 3 yıllık teknoloji öğretim deneyimi." data-en="Ableton Live, REAPER, Max/MSP, and electroacoustic tools add a contemporary dimension to teaching. 3 years of technology teaching experience.">Ableton Live, REAPER, Max/MSP ve elektroakustik araçlar eğitimde çağdaş bir boyut ekler. 3 yıllık teknoloji öğretim deneyimi.</div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-label" data-tr="ULUSLARARASI SERTİFİKALAR" data-en="INTERNATIONAL CERTIFICATES">ULUSLARARASI SERTİFİKALAR</div>
+  <h2 class="sec-title" data-tr="Öğrencilerim Sertifika Kazandı" data-en="My Students Earned Certificates">Öğrencilerim Sertifika Kazandı</h2>
+  <div class="cert-section">
+    <div class="cert-title" data-tr="10+ Yıllık Sertifika Sınavı Deneyimi" data-en="10+ Years of Certificate Exam Experience">10+ Yıllık Sertifika Sınavı Deneyimi</div>
+    <div class="cert-desc" data-tr="ABRSM, Trinity College London, London College of Music ve Royal College sınav sistemlerine göre öğrencilerimi piyano, müzik teorisi ve kulak eğitimi alanlarında hazırladım. 10 yılı aşkın süredir öğrencilerim bu kurumların uluslararası sertifikalarını kazandı." data-en="I have prepared my students in piano, music theory, and ear training according to the examination systems of ABRSM, Trinity College London, London College of Music, and Royal College. For over 10 years, my students have earned international certificates from these institutions.">ABRSM, Trinity College London, London College of Music ve Royal College sınav sistemlerine göre öğrencilerimi piyano, müzik teorisi ve kulak eğitimi alanlarında hazırladım. 10 yılı aşkın süredir öğrencilerim bu kurumların uluslararası sertifikalarını kazandı.</div>
+    <div class="cert-logos">
+      <div><img src="assets/logo-abrsm.svg" alt="ABRSM" class="cert-logo"><div class="cert-logo-label">ABRSM</div></div>
+      <div><img src="assets/logo-trinity.svg" alt="Trinity College London" class="cert-logo"><div class="cert-logo-label">Trinity College London</div></div>
+      <div><img src="assets/logo-lcm.svg" alt="London College of Music" class="cert-logo"><div class="cert-logo-label">London College of Music</div></div>
+      <div><img src="assets/logo-royal.svg" alt="Royal College of Music" class="cert-logo"><div class="cert-logo-label">Royal College of Music</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="egitim" class="reveal">
+  <div class="sec-label" data-tr="AKADEMİK GEÇMİŞ" data-en="ACADEMIC BACKGROUND">AKADEMİK GEÇMİŞ</div>
+  <h2 class="sec-title" data-tr="Eğitim" data-en="Education">Eğitim</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-date">2026</div>
+      <div class="tl-role" data-tr="Master of Music — Kompozisyon" data-en="Master of Music — Composition">Master of Music — Kompozisyon</div>
+      <div class="tl-org">Bowling Green State University, Ohio, ABD</div>
+      <div class="tl-desc">
+        <p data-tr="Marilyn Shrude, Christopher Dietz, Elainie Lillios ve Piyawat Louilarpprasert ile kompozisyon çalışmaları." data-en="Composition studies with Marilyn Shrude, Christopher Dietz, Elainie Lillios, and Piyawat Louilarpprasert.">Marilyn Shrude, Christopher Dietz, Elainie Lillios ve Piyawat Louilarpprasert ile kompozisyon çalışmaları.</p>
+        <ul>
+          <li data-tr="Genişletilmiş enstrümantal teknikler" data-en="Extended instrumental techniques">Genişletilmiş enstrümantal teknikler</li>
+          <li data-tr="Korpus temelli kompozisyon" data-en="Corpus-based composition">Korpus temelli kompozisyon</li>
+          <li data-tr="Yapay zekâ entegre kompozisyon sistemleri" data-en="AI-integrated compositional systems">Yapay zekâ entegre kompozisyon sistemleri</li>
+          <li data-tr="İcracı–sistem etkileşimi" data-en="Performer–system interaction">İcracı–sistem etkileşimi</li>
+          <li data-tr="Max/MSP · SoMax 2 · FluCoMa" data-en="Max/MSP · SoMax 2 · FluCoMa">Max/MSP · SoMax 2 · FluCoMa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">—</div>
+      <div class="tl-role" data-tr="Lisans — Müzik Teorisi ve Kompozisyon" data-en="Bachelor's — Music Theory & Composition">Lisans — Müzik Teorisi ve Kompozisyon</div>
+      <div class="tl-org">İstanbul Üniversitesi Devlet Konservatuvarı</div>
+      <div class="tl-desc">
+        <p data-tr="Prof. Dr. Emel Çelebioğlu ve Prof. Mete Sakpınar ile kompozisyon ve müzik teorisi eğitimi." data-en="Composition and music theory studies with Prof. Dr. Emel Çelebioğlu and Prof. Mete Sakpınar.">Prof. Dr. Emel Çelebioğlu ve Prof. Mete Sakpınar ile kompozisyon ve müzik teorisi eğitimi.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">—</div>
+      <div class="tl-role" data-tr="Kompozisyon / Müzik Teorisi Çalışmaları" data-en="Composition / Music Theory Studies">Kompozisyon / Müzik Teorisi Çalışmaları</div>
+      <div class="tl-org">Mimar Sinan Güzel Sanatlar Üniversitesi Devlet Konservatuvarı</div>
+    </div>
+  </div>
+</section>
+
+<section id="bestecilik" class="reveal">
+  <div class="sec-label" data-tr="BESTECİLİK" data-en="COMPOSITION">BESTECİLİK</div>
+  <h2 class="sec-title" data-tr="Seçilmiş Eserler" data-en="Selected Works">Seçilmiş Eserler</h2>
+  <p class="composer-note" data-tr="Enstrümantal, vokal, elektroakustik ve multimedia eserler." data-en="Instrumental, vocal, electroacoustic, and multimedia works.">Enstrümantal, vokal, elektroakustik ve multimedia eserler.</p>
+  <ul class="works">
+    <li><span class="work-title">Animal</span><span class="work-meta" data-tr="Orkestra · Toledo Symphony Orchestra · 2025" data-en="Orchestra · Toledo Symphony Orchestra · 2025">Orkestra · Toledo Symphony Orchestra · 2025</span></li>
+    <li><span class="work-title">Focus</span><span class="work-meta" data-tr="Sextet + Fixed Media · FLYDLPHN Ensemble · Komisyon" data-en="Sextet + Fixed Media · FLYDLPHN Ensemble · Commission">Sextet + Fixed Media · FLYDLPHN Ensemble · Komisyon</span></li>
+    <li><span class="work-title">eye | outside | eye</span><span class="work-meta" data-tr="Kontrbas · Vokal · Live Electronics" data-en="Double Bass · Voice · Live Electronics">Kontrbas · Vokal · Live Electronics</span></li>
+    <li><span class="work-title">A Room For The Belated Sentences</span><span class="work-meta" data-tr="Ensemble · Korpus · Interactive Electronics · TAK Ensemble / KEAR" data-en="Ensemble · Corpus · Interactive Electronics · TAK Ensemble / KEAR">Ensemble · Korpus · Interactive Electronics · TAK Ensemble / KEAR</span></li>
+    <li><span class="work-title">Uzun Hava</span><span class="work-meta" data-tr="Tenor Saksofon · BGSU Composer's Forum" data-en="Tenor Saxophone · BGSU Composer's Forum">Tenor Saksofon · BGSU Composer's Forum</span></li>
+    <li><span class="work-title">Akdeniz</span><span class="work-meta" data-tr="1. Ödül · Trieste Classica · Flam-a Duo" data-en="First Prize · Trieste Classica · Flam-a Duo">1. Ödül · Trieste Classica · Flam-a Duo</span></li>
+    <li><span class="work-title">Humoresque Ridiculo</span><span class="work-meta" data-tr="2. Ödül · 12th FIDELIO Piyano Kompozisyon Yarışması" data-en="Second Prize · 12th FIDELIO Piano Composition Competition">2. Ödül · 12th FIDELIO Piyano Kompozisyon Yarışması</span></li>
+  </ul>
+</section>
+
+<section id="iletisim" class="reveal">
+  <div class="sec-label" data-tr="İLETİŞİM" data-en="CONTACT">İLETİŞİM</div>
+  <h2 class="sec-title" data-tr="Ulaşın" data-en="Get in Touch">Ulaşın</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-label" data-tr="E-POSTA" data-en="EMAIL">E-POSTA</div>
+      <div class="contact-value"><a href="mailto:kurtulus258@gmail.com">kurtulus258@gmail.com</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label" data-tr="TELEFON" data-en="PHONE">TELEFON</div>
+      <div class="contact-value"><a href="tel:+905339530460">+90 533 953 04 60</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">GITHUB</div>
+      <div class="contact-value"><a href="https://github.com/omer-kurtulus" target="_blank" rel="noopener">github.com/omer-kurtulus</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label" data-tr="KONUM" data-en="LOCATION">KONUM</div>
+      <div class="contact-value" data-tr="İstanbul, Türkiye" data-en="Istanbul, Türkiye">İstanbul, Türkiye</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span data-tr="© 2026 Ömer Kurtuluş" data-en="© 2026 Omer Kurtulus">© 2026 Ömer Kurtuluş</span>
+</footer>
+
+<script>
+let lang='tr';function toggleLang(){lang=lang==='tr'?'en':'tr';document.documentElement.lang=lang;document.querySelectorAll('[data-tr]').forEach(el=>{el.textContent=lang==='tr'?el.dataset.tr:el.dataset.en});document.getElementById('langBtn').textContent=lang==='tr'?'EN':'TR'}
+const observer=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
