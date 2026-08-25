@@ -66,6 +66,15 @@
     .gallery-figure{margin:0;overflow:hidden;border:1px solid var(--border);background:var(--card)}
     .gallery-figure img{width:100%;height:260px;object-fit:cover;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .35s,transform .35s}
     .gallery-figure:hover img{filter:grayscale(0%);transform:scale(1.04)}
+    .achieve-block{margin-bottom:2.8rem}
+    .achieve-block:last-child{margin-bottom:0}
+    .achieve-title{font-size:1.15rem;margin-bottom:1rem;font-weight:normal;letter-spacing:-.01em}
+    .achieve-block .cert-section{margin-top:1.2rem}
+    .achieve-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1.2rem;max-width:640px}
+    .achieve-stat{background:var(--bg);padding:1.3rem 1rem;text-align:center}
+    .achieve-num{font-size:1.7rem;color:var(--accent);font-family:var(--mono)}
+    .achieve-label{font-size:.62rem;color:var(--muted);font-family:var(--mono);letter-spacing:.05em;margin-top:.35rem;text-transform:uppercase;line-height:1.4}
+    .achieve-desc{font-size:.88rem;color:#aaa;line-height:1.65;max-width:680px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.6rem}
     .contact-item{padding:1.4rem;border:1px solid var(--border);background:var(--card)}
     .contact-label{font-size:.68rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.4rem}
@@ -85,6 +94,7 @@
     <a href="#deneyim" data-tr="Eğitimcilik" data-en="Teaching">Eğitimcilik</a>
     <a href="#teknoloji" data-tr="Teknoloji" data-en="Technology">Teknoloji</a>
     <a href="#yontem" data-tr="Yöntem" data-en="Method">Yöntem</a>
+    <a href="#basari" data-tr="Başarılar" data-en="Achievements">Başarılar</a>
     <a href="#ogrenciler" data-tr="Öğrenciler" data-en="Students">Öğrenciler</a>
     <a href="#egitim" data-tr="Akademik" data-en="Academic">Akademik</a>
     <a href="#bestecilik" data-tr="Bestecilik" data-en="Composition">Bestecilik</a>
@@ -228,9 +238,11 @@
   </div>
 </section>
 
-<section class="reveal">
-  <div class="sec-label" data-tr="ULUSLARARASI SERTİFİKALAR" data-en="INTERNATIONAL CERTIFICATES">ULUSLARARASI SERTİFİKALAR</div>
-  <h2 class="sec-title" data-tr="Öğrencilerim Sertifika Kazandı" data-en="My Students Earned Certificates">Öğrencilerim Sertifika Kazandı</h2>
+<section id="basari" class="reveal">
+  <div class="sec-label" data-tr="ÖĞRENCİLERİMİN BAŞARILARI" data-en="MY STUDENTS' ACHIEVEMENTS">ÖĞRENCİLERİMİN BAŞARILARI</div>
+  <h2 class="sec-title" data-tr="Öğrencilerimin Başarıları" data-en="My Students' Achievements">Öğrencilerimin Başarıları</h2>
+  <div class="achieve-block">
+    <h3 class="achieve-title" data-tr="Uluslararası Sertifikalar" data-en="International Certificates">Uluslararası Sertifikalar</h3>
   <div class="cert-section">
     <div class="cert-title" data-tr="10+ Yıllık Sertifika Sınavı Deneyimi" data-en="10+ Years of Certificate Exam Experience">10+ Yıllık Sertifika Sınavı Deneyimi</div>
     <div class="cert-desc" data-tr="ABRSM, Trinity College London, London College of Music ve Royal College sınav sistemlerine göre öğrencilerimi piyano, müzik teorisi ve kulak eğitimi alanlarında hazırladım. 10 yılı aşkın süredir öğrencilerim bu kurumların uluslararası sertifikalarını kazandı. Şu ana kadar 21 öğrencimin sertifika almasına katkı sağladım." data-en="I have prepared my students in piano, music theory, and ear training according to the examination systems of ABRSM, Trinity College London, London College of Music, and Royal College. For over 10 years, my students have earned international certificates from these institutions. So far, I have helped 21 of my students earn their certificates.">ABRSM, Trinity College London, London College of Music ve Royal College sınav sistemlerine göre öğrencilerimi piyano, müzik teorisi ve kulak eğitimi alanlarında hazırladım. 10 yılı aşkın süredir öğrencilerim bu kurumların uluslararası sertifikalarını kazandı. Şu ana kadar 21 öğrencimin sertifika almasına katkı sağladım.</div>
@@ -240,6 +252,22 @@
       <div><img src="assets/logo-lcm.svg" alt="London College of Music" class="cert-logo"><div class="cert-logo-label">London College of Music</div></div>
       <div><img src="assets/logo-royal.svg" alt="Royal College of Music" class="cert-logo"><div class="cert-logo-label">Royal College of Music</div></div>
     </div>
+  </div>
+  </div>
+
+  <div class="achieve-block">
+    <h3 class="achieve-title" data-tr="Konservatuvara Hazırlık" data-en="Conservatory Preparation">Konservatuvara Hazırlık</h3>
+    <div class="achieve-stats">
+      <div class="achieve-stat"><div class="achieve-num">44</div><div class="achieve-label" data-tr="ÖĞRENCİ HAZIRLANDI" data-en="STUDENTS PREPARED">ÖĞRENCİ HAZIRLANDI</div></div>
+      <div class="achieve-stat"><div class="achieve-num">35</div><div class="achieve-label" data-tr="LİSE / ORTAOKUL KAZANIMI" data-en="HIGH SCHOOL / MIDDLE SCHOOL PLACEMENTS">LİSE / ORTAOKUL KAZANIMI</div></div>
+      <div class="achieve-stat"><div class="achieve-num">12</div><div class="achieve-label" data-tr="LİSANS KAZANIMI" data-en="UNDERGRADUATE PLACEMENTS">LİSANS KAZANIMI</div></div>
+    </div>
+    <p class="achieve-desc" data-tr="Konservatuvara hazırlıkta toplam 44 öğrenci yetiştirdim; 35'i konservatuvarın lise ve ortaokul seviyelerine, 12'si lisans düzeyine kazandırıldı. Farklı bölümlere yönelik öğrenciler hazırladım ve bunu konservatuvar müfredatı ile konservatuvar çalıştırma mantığıyla yaptım. İstanbul Devlet Konservatuvarı'ndaki görevim sayesinde repertuvarlara ve çalıştırma biçimlerine tamamen hâkim olduğum için öğrencilerimi yüksek bir başarı oranıyla hazırladım." data-en="In conservatory preparation, I trained a total of 44 students; 35 were placed into conservatory high-school and middle-school levels, and 12 into undergraduate programs. I prepared students for different departments, using the conservatory curriculum and the conservatory training approach. Thanks to my experience at Istanbul State Conservatory, I have complete command of the repertoires and training methods, which allowed me to prepare my students with a high success rate.">Konservatuvara hazırlıkta toplam 44 öğrenci yetiştirdim; 35'i konservatuvarın lise ve ortaokul seviyelerine, 12'si lisans düzeyine kazandırıldı. Farklı bölümlere yönelik öğrenciler hazırladım ve bunu konservatuvar müfredatı ile konservatuvar çalıştırma mantığıyla yaptım. İstanbul Devlet Konservatuvarı'ndaki görevim sayesinde repertuvarlara ve çalıştırma biçimlerine tamamen hâkim olduğum için öğrencilerimi yüksek bir başarı oranıyla hazırladım.</p>
+  </div>
+
+  <div class="achieve-block">
+    <h3 class="achieve-title" data-tr="Öğrencilerle Yapılan Konserler" data-en="Concerts With Students">Öğrencilerle Yapılan Konserler</h3>
+    <p class="achieve-desc" data-tr="Öğrencilerimle şu ana kadar 8 konser gerçekleştirdik. Her sene en az bir veya iki konser yapıldı; bazen bir mekân kiralandı, bazen ise basitçe ev konserleri düzenlendi. Çocuklar sürekli olarak konserlere ve sahneye çıkmaya teşvik edildi." data-en="To date, we have held 8 concerts with my students. Every year at least one or two concerts took place; sometimes a venue was rented, and sometimes we simply held home concerts. The children were continually encouraged to perform in concerts.">Öğrencilerimle şu ana kadar 8 konser gerçekleştirdik. Her sene en az bir veya iki konser yapıldı; bazen bir mekân kiralandı, bazen ise basitçe ev konserleri düzenlendi. Çocuklar sürekli olarak konserlere ve sahneye çıkmaya teşvik edildi.</p>
   </div>
 </section>
 
